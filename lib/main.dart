@@ -37,7 +37,7 @@ class AirQuality {
 
 class ApiService {
   final String token =
-      "9d8f74b7b3699a9445175b479ba9ae3323de9112"; // ใช้ Token ของคุณ
+      "9d8f74b7b3699a9445175b479ba9ae3323de9112";
 
   Future<AirQuality> fetchAirQuality(String city) async {
     final url = Uri.parse("https://api.waqi.info/feed/$city/?token=$token");
@@ -66,7 +66,7 @@ class _AirQualityScreenState extends State<AirQualityScreen> {
   @override
   void initState() {
     super.initState();
-    futureAirQuality = apiService.fetchAirQuality("Bangkok"); // ค่า default
+    futureAirQuality = apiService.fetchAirQuality("Bangkok");
   }
 
   String getAirQualityLevel(int aqi) {
@@ -86,7 +86,7 @@ class _AirQualityScreenState extends State<AirQualityScreen> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFF90CAF9), Color(0xFFA5D6A7)], // ฟ้า → เขียวอ่อน
+            colors: [Color(0xFF90CAF9), Color(0xFFA5D6A7)],
           ),
         ),
         child: SafeArea(
